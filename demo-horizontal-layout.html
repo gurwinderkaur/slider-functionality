@@ -1,0 +1,94 @@
+
+<link rel="stylesheet" href="style.css">
+
+<body class="horizontal-layout">
+	
+
+<!-- 	<nav id="navigation-menu">
+		
+<ul>
+			
+
+<li><a href="#section-1">Section 1</a></li>
+			
+<li><a href="#section-2">Section 2</a></li>
+		
+</ul>
+	
+</nav> -->
+	
+	
+<div id="content">
+		
+<section id="section-1">
+			
+<div class="content">
+				
+<h2>Section 1</h2>
+				
+<hr /><a href="#" rel="next">Next section &rarr;</a>
+			
+</div>
+		</section>
+
+		<section id="section-2">
+			
+<div class="content">
+				
+<h2>Section 2</h2>
+				<hr />
+<a href="#top">&larr; Back to start</a> 
+<a href="#" rel="next">Next section &rarr;</a>
+			
+</div>
+		</section>
+	</div>
+	
+	
+<!-- Google CDN jQuery -->
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	
+<!-- Page Scroll to id plugin -->
+	<script src="../jquery.malihu.PageScroll2id.js"></script>
+
+	
+	
+<script>
+		
+(function($){
+			
+$(window).load(function(){
+				
+				
+/* Page Scroll to id fn call */
+				
+$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					
+layout:"horizontal",
+					
+highlightSelector:"#navigation-menu a"
+				
+});
+				
+				
+/* demo functions */
+				
+$("a[rel='next']").click(function(e){
+					
+e.preventDefault();
+					
+var to=$(this).parent().parent("section").next().attr("id");
+					
+$.mPageScroll2id("scrollTo",to);
+				
+});
+				
+			
+});
+		
+})(jQuery);
+	
+</script>
+
